@@ -1,59 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Longdaycat.Co (Point of Sale & Inventory System)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Selamat datang di repositori **Longdaycat.Co**. Aplikasi ini adalah sistem **Point of Sale (POS)** dan **Manajemen Stok/Inventaris** berbasis web modern. Aplikasi ini dirancang untuk memudahkan proses transaksi kasir, pelacakan stok barang, hingga pembuatan laporan penjualan.
 
-## About Laravel
+## 🚀 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Point of Sale (POS)**: Antarmuka kasir yang interaktif untuk memproses transaksi dengan cepat.
+- **Manajemen Produk & Kategori**: Mengelola data barang, harga, dan kategori produk.
+- **Manajemen Stok (Inventory)**: Pelacakan keluar masuknya barang dan ketersediaan stok.
+- **Pemindai Barcode/QR Code**: Terintegrasi dengan fitur scan barcode & QR code (menggunakan kamera/scanner) untuk pencarian barang.
+- **Laporan Penjualan (Reports)**: Laporan transaksi yang dilengkapi dengan grafik visual (Chart.js) dan bisa di-export ke dokumen (Word/DOCX).
+- **Manajemen Pengguna (Users)**: Hak akses untuk pengguna/karyawan.
+- **PWA (Progressive Web App)**: Aplikasi dapat diinstal di perangkat (Mobile/Desktop) dan bekerja lebih optimal layaknya aplikasi native.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi ini menggunakan stack teknologi terkini (TALL/VILT stack variant):
 
-## Learning Laravel
+- **Backend**: Laravel 11 (PHP)
+- **Frontend**: Vue.js 3 + Inertia.js
+- **Styling**: Tailwind CSS
+- **Bundler**: Vite
+- **Integrasi PWA**: `vite-plugin-pwa`
+- **Lain-lain**: 
+  - `chart.js` & `vue-chartjs` (Untuk grafik analitik)
+  - `html5-qrcode` & `jsbarcode` (Pemindai dan pembuat barcode)
+  - `docx` & `file-saver` (Export laporan ke dokumen)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ⚙️ Panduan Instalasi (Development)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Berikut adalah langkah-langkah untuk menjalankan Longdaycat.Co di perangkat lokal Anda:
 
-## Laravel Sponsors
+1. **Clone repositori ini**:
+   ```bash
+   git clone https://github.com/TRPL-JBI/TA2026-362155401070-Aidika-Akbar-Assufa.git
+   cd TA2026-362155401070-Aidika-Akbar-Assufa
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Instalasi Dependensi PHP (Composer)**:
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Instalasi Dependensi Node.js**:
+   ```bash
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Konfigurasi Environment**:
+   Salin file `.env.example` ke `.env`, kemudian sesuaikan pengaturan koneksi database Anda:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+5. **Jalankan Migrasi Database & Seeder**:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Jalankan Server Lokal**:
+   Jalankan perintah ini menggunakan 2 terminal yang berbeda (atau gunakan command yang sudah disatukan jika tersedia):
+   ```bash
+   php artisan serve
+   ```
+   dan
+   ```bash
+   npm run dev
+   ```
 
-## Code of Conduct
+Aplikasi sekarang dapat diakses melalui `http://localhost:8000`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 👥 Kontributor
+- **Aidika Akbar Assufa** (362155401070)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📄 Lisensi
+Proyek ini bersifat *Open Source* dan dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
